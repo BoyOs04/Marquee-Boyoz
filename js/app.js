@@ -360,7 +360,7 @@
     const ranges=[
       ["fontSize",24,320,"--font-size","px","fontSizeNumber"],
       ["speed",2,120,"--speed","s","speedNumber"],
-      ["rotation",-15,15,"--rotation","deg","rotationNumber"],
+      ["rotation",-360,360,"--rotation","deg","rotationNumber"],
       ["gap",0,300,"--gap","px","gapNumber"],
       ["shadow",0,30,"--shadow-depth","px","shadowNumber"]
     ];
