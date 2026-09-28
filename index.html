@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="BoyOz marquee typography playground">
+  <title>BoyOz — Marquee</title>
+
+  <link
+    id="googleFontStylesheet"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/lucide@1.48.0/dist/umd/lucide.min.js"
+    defer
+  ></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="theme-flash" id="themeFlash" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <button
+      class="settings-toggle"
+      id="settingsToggle"
+      type="button"
+      aria-label="Buka pengaturan"
+      aria-controls="settingsPanel"
+      aria-expanded="false"
+    >
+      <i data-lucide="settings"></i>
+    </button>
+  </header>
+
+  <main class="scene" aria-label="BoyOz marquee">
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <button class="theme-button" type="button">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+          <button class="theme-button" type="button">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+          <button class="theme-button" type="button">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+          <button class="theme-button" type="button">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+        </div>
+
+        <div class="marquee-group" aria-hidden="true">
+          <button class="theme-button" type="button" tabindex="-1">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+          <button class="theme-button" type="button" tabindex="-1">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+          <button class="theme-button" type="button" tabindex="-1">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+          <button class="theme-button" type="button" tabindex="-1">BoyOz</button>
+          <span class="separator" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="settings-overlay" id="settingsOverlay"></div>
+
+  <aside
+    class="settings-panel"
+    id="settingsPanel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="settingsTitle"
+    aria-hidden="true"
+  >
+    <div class="settings-header">
+      <div class="settings-title">
+        <h2 id="settingsTitle">Settings</h2>
+        <p>Customize your marquee</p>
+      </div>
+
+      <button
+        class="close-settings"
+        type="button"
+        aria-label="Tutup pengaturan"
+      >
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <section class="settings-section">
+      <h3>Content</h3>
+
+      <div class="field">
+        <label for="textInput">Text</label>
+        <input
+          class="text-input"
+          id="textInput"
+          type="text"
+          value="BoyOz"
+          maxlength="40"
+          autocomplete="off"
+        >
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h3>Typography</h3>
+
+      <div class="field">
+        <label for="fontPicker">Font</label>
+        <select class="select-input" id="fontPicker">
+          <optgroup label="Sans Serif">
+            <option>Space Grotesk</option>
+            <option>Manrope</option>
+            <option>Plus Jakarta Sans</option>
+            <option>DM Sans</option>
+            <option>Inter</option>
+            <option>Poppins</option>
+            <option>Montserrat</option>
+            <option>Outfit</option>
+            <option>Sora</option>
+            <option>Urbanist</option>
+            <option>Nunito Sans</option>
+            <option>Raleway</option>
+            <option>Roboto</option>
+          </optgroup>
+
+          <optgroup label="Display">
+            <option>Bebas Neue</option>
+            <option>Archivo Black</option>
+            <option>Anton</option>
+            <option>Oswald</option>
+            <option>League Spartan</option>
+            <option>Syne</option>
+            <option>Unbounded</option>
+            <option>Bungee</option>
+            <option>Righteous</option>
+            <option>Abril Fatface</option>
+          </optgroup>
+
+          <optgroup label="Serif">
+            <option>Playfair Display</option>
+            <option>DM Serif Display</option>
+            <option>Libre Baskerville</option>
+            <option>Cormorant Garamond</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="fontSize">
+          <span>Font Size</span>
+          <span class="value" id="fontSizeValue">160px</span>
+        </label>
+        <div class="range-row"><input class="range" id="fontSize" type="range" min="24" max="320" step="1" value="160"><input class="number-input" id="fontSizeNumber" type="number" min="24" max="320" step="1" value="160" inputmode="numeric" aria-label="Font size custom"></div>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h3>Animation</h3>
+
+      <div class="field">
+        <label for="speed">
+          <span>Speed</span>
+          <span class="value" id="speedValue">20s</span>
+        </label>
+        <div class="range-row"><input class="range" id="speed" type="range" min="2" max="120" step="1" value="20"><input class="number-input" id="speedNumber" type="number" min="2" max="120" step="1" value="20" inputmode="numeric" aria-label="Speed custom"></div>
+      </div>
+
+      <div class="field">
+        <label for="rotation">
+          <span>Rotation</span>
+          <span class="value" id="rotationValue">-2°</span>
+        </label>
+        <div class="range-row"><input class="range" id="rotation" type="range" min="-15" max="15" step="1" value="-2"><input class="number-input" id="rotationNumber" type="number" min="-15" max="15" step="1" value="-2" inputmode="numeric" aria-label="Rotation custom"></div>
+      </div>
+
+      <div class="field">
+        <label for="gap">
+          <span>Gap</span>
+          <span class="value" id="gapValue">96px</span>
+        </label>
+        <div class="range-row"><input class="range" id="gap" type="range" min="0" max="300" step="1" value="96"><input class="number-input" id="gapNumber" type="number" min="0" max="300" step="1" value="96" inputmode="numeric" aria-label="Gap custom"></div>
+      </div>
+
+      <div class="field">
+        <label for="shadow">
+          <span>Shadow</span>
+          <span class="value" id="shadowValue">8px</span>
+        </label>
+        <div class="range-row"><input class="range" id="shadow" type="range" min="0" max="30" step="1" value="8"><input class="number-input" id="shadowNumber" type="number" min="0" max="30" step="1" value="8" inputmode="numeric" aria-label="Shadow custom"></div>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h3>Theme</h3>
+
+      <div class="field">
+        <label for="themePicker">Preset</label>
+        <select class="select-input" id="themePicker">
+          <option value="elegant">Elegant</option>
+          <option value="ocean">Ocean</option>
+          <option value="forest">Forest</option>
+          <option value="sunset">Sunset</option>
+          <option value="violet">Violet</option>
+          <option value="ice">Ice</option>
+          <option value="cream">Cream</option>
+          <option value="candy">Candy</option>
+          <option value="lavender">Lavender</option>
+          <option value="mint">Mint</option>
+          <option value="">Custom / Random</option>
+        </select>
+      </div>
+
+      <div class="custom-theme" id="customTheme" hidden>
+        <div class="custom-theme-header"><strong>Custom Colors</strong><span>Atur warna bebas</span></div>
+        <div class="color-field"><label for="colorBgA"><span>Background A</span><output id="colorBgAValue">#080808</output></label><input class="color-input" id="colorBgA" type="color" value="#080808"></div>
+        <div class="color-field"><label for="colorBgB"><span>Background B</span><output id="colorBgBValue">#211d19</output></label><input class="color-input" id="colorBgB" type="color" value="#211d19"></div>
+        <div class="color-field"><label for="colorText"><span>Text</span><output id="colorTextValue">#f5f1e8</output></label><input class="color-input" id="colorText" type="color" value="#f5f1e8"></div>
+        <div class="color-field"><label for="colorAccent"><span>Accent</span><output id="colorAccentValue">#d7b77c</output></label><input class="color-input" id="colorAccent" type="color" value="#d7b77c"></div>
+        <div class="color-field"><label for="colorShadow"><span>Shadow</span><output id="colorShadowValue">#070707</output></label><input class="color-input" id="colorShadow" type="color" value="#070707"></div>
+        <div class="color-field"><label for="colorGlow"><span>Glow</span><output id="colorGlowValue">#d7b77c</output></label><input class="color-input" id="colorGlow" type="color" value="#d7b77c"></div>
+        <div class="field glow-opacity-field"><label for="glowOpacity"><span>Glow Opacity</span><span class="value" id="glowOpacityValue">18%</span></label><input class="range" id="glowOpacity" type="range" min="0" max="100" step="1" value="18"></div>
+        <button class="control-button custom-apply" id="applyCustomTheme" type="button">Apply Custom Theme</button>
+      </div>
+
+      <div class="theme-actions">
+        <button class="control-button primary" id="randomTheme" type="button">
+          Random Theme
+        </button>
+        <button class="control-button" id="reset" type="button">
+          Reset
+        </button>
+      </div>
+
+      <p class="settings-hint">
+        Klik teks BoyOz pada marquee untuk menghasilkan tema acak.
+        Pengaturan tersimpan otomatis di perangkat ini.
+      </p>
+    </section>
+  </aside>
+</body>
+</html>
